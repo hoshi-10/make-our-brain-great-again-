@@ -34,6 +34,7 @@
 ### 前端
  - vue3
  - Element Plus
+ - Axios
 ### 后端
 
 
