@@ -21,5 +21,5 @@ def index():
     return "Quotation Management System API is running"
 
 if __name__ == '__main__':
-    # 启动Flask应用，监听所有网络接口，端口5001
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    # 启动Flask应用，监听所有网络接口，端口5000
+    app.run(host='0.0.0.0', port=5000, debug=True)
