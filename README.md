@@ -35,7 +35,71 @@
  - Element Plus
  - Axios
 ### 后端
+ - Python 3.8+
+ - Flask 2.0+
+ - Flask-CORS 3.0+
+ - SQLite 3
 
 
 ##  注意事项
 - 打印前建议预览，可在浏览器打印设置中调整纸张大小（推荐A4）。
+
+## 功能特性
+
+
+### 资源管理
+
+
+### 项目管理
+
+
+### 报价管理
+
+
+
+
+## 项目结构
+
+
+## 安装与运行
+
+### 后端安装
+
+```bash
+cd python
+pip install -r requirements.txt
+python app.py
+```
+
+后端服务将在 http://localhost:5000 启动
+
+### 前端安装
+```bash
+```bash
+cd web
+npm install
+npm run dev
+```
+
+## API接口
+
+### 资源接口
+- `GET /api/resources` - 获取资源列表
+- `POST /api/resources` - 新增资源
+- `PUT /api/resources/<id>` - 修改资源
+- `DELETE /api/resources/<id>` - 删除资源
+
+### 项目接口
+- `GET /api/projects` - 获取项目列表
+- `POST /api/projects` - 新增项目
+- `GET /api/projects/<id>` - 获取项目详情
+- `PUT /api/projects/<id>` - 修改项目
+- `DELETE /api/projects/<id>` - 删除项目
+
+### 报价接口
+- `GET /api/quotations` - 获取报价列表
+- `POST /api/quotations` - 新增报价
+- `GET /api/quotations/<id>` - 获取报价详情
+- `PUT /api/quotations/<id>` - 修改报价
+- `DELETE /api/quotations/<id>` - 删除报价
+- `GET /api/quotations/<id>/items` - 获取报价资源项
