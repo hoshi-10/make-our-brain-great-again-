@@ -76,7 +76,7 @@ python app.py
 ### 前端安装
 ```bash
 ```bash
-cd myapp
+cd web
 npm install
 npm run dev
 ```
