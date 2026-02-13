@@ -43,4 +43,8 @@ def user_profile(user_id):
 
 if __name__ == '__main__':
     # 启动Flask应用，监听所有网络接口，端口5000
+<<<<<<< HEAD
     app.run(host='0.0.0.0', port=5000, debug=True)
+=======
+    app.run(host='0.0.0.0', port=5000, debug=True)
+>>>>>>> 213ebc7712615de7509a32fb70346d9b024780a1
