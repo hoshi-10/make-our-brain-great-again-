@@ -1,4 +1,5 @@
 <template>
+  <div class="print-area">
   <el-card class="box" shadow="always">
     <h1 class="print-title">报价清单</h1>
 
@@ -24,13 +25,14 @@
         总价：￥{{ totalPrice }}
       </el-text>
     </div>
-
+</el-card>
     <!-- 操作按钮 -->
     <QuoteActions
       :list="list"
       :total="totalPrice"
+      class="no-print"
     />
-  </el-card>
+</div>
 </template>
 
 <script setup>
@@ -85,24 +87,30 @@ const removeItem = (index) => {
 
 /* 打印样式优化 */
 @media print {
-  @page {
-    size: A4;
-    margin: 2cm; /* 设置A4纸边距，更像正式单据 */
-  }
-
-  body {
-    margin: 0;
-    font-family: "Microsoft YaHei", "SimSun", sans-serif; /* 打印友好的字体 */
-  }
-
-  /* 隐藏所有不需要打印的元素 */
-  .el-aside,
-  .el-button,
-  .no-print,
-  .el-card__header,
-  .el-card__body > :first-child {
+  
+:deep(.no-print) {
     display: none !important;
   }
+  /* 默认全部隐藏 */
+  body * {
+    visibility: hidden;
+  }
+
+  /* 只显示打印区域 */
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+
+  /* 让打印区域铺满 */
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
 
   /* 主容器样式 */
   .box {
@@ -161,5 +169,5 @@ const removeItem = (index) => {
     font-size: 12px;
     color: #666;
   }
-}
+
 </style>

@@ -4,24 +4,27 @@
     type="primary"
     @click="toggleForm"
     style="margin-bottom: 20px"
+    class="no-print"
   >
     {{ showForm ? '收起填写' : '新增报价' }}
 
-  </el-button>
-<el-card class="box-card" shadow="never" style="margin-bottom:20px;">
-  <el-form inline label-width="70px">
-
-  <el-input v-model="props.quoteInfo.handler" placeholder="请填写经办人" />
-  <el-input v-model="props.quoteInfo.remark" placeholder="请填写备注" />
-
-
-  </el-form>
-</el-card>
+ </el-button>
 
   <!-- 表单 -->
   <el-card v-show="showForm" shadow="never">
     <el-form :model="form" label-width="60px">
       <el-row :gutter="20">
+<el-col :span="12">
+      <el-form-item label="经办人">
+        <el-input v-model="props.quoteInfo.handler" placeholder="可不填"/>
+      </el-form-item>
+    </el-col>
+
+    <el-col :span="12">
+      <el-form-item label="备注">
+        <el-input v-model="props.quoteInfo.remark" placeholder="可不填"/>
+      </el-form-item>
+    </el-col>
 
         <el-col :span="12">
           <el-form-item label="日期">
@@ -41,13 +44,13 @@
 
         <el-col :span="12">
           <el-form-item label="数量">
-            <el-input-number v-model="form.quantity" style="width: 100%" />
+            <el-input-number v-model="form.quantity" :min="0" style="width: 100%" />
           </el-form-item>
         </el-col>
 
         <el-col :span="12">
           <el-form-item label="单价">
-            <el-input-number v-model="form.price" style="width: 100%" />
+            <el-input-number v-model="form.price" :min="0" style="width: 100%" />
           </el-form-item>
         </el-col>
 

@@ -10,7 +10,7 @@
 <el-table-column prop="subtotal" label="小计" />
 <el-table-column label="操作">
 <template #default="scope">
-<el-button size="small" type="danger" @click="$emit('remove', scope.$index)">删除</el-button>
+<el-button size="small" type="danger" class="no-print" @click="$emit('remove', scope.$index)">删除</el-button>
 </template>
 </el-table-column>
 </el-table>
